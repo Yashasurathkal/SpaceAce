@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bejnye3nlghvx"]
+
+[ext_resource type="Script" uid="uid://cyp7nrdsdwve7" path="res://Components/Movement/PlayerMovement.gd" id="1_x7jxi"]
+
+[node name="PlayerMovement" type="Node" unique_id=1766883746]
+script = ExtResource("1_x7jxi")
+speed = 300.0

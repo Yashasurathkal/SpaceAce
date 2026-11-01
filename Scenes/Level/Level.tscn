@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b3kat2sxu5f6w"]
+
+[ext_resource type="PackedScene" uid="uid://cyqs6mhmiflcu" path="res://Scenes/Background/Background.tscn" id="1_3hkb6"]
+[ext_resource type="PackedScene" uid="uid://c4l87jfqs05wy" path="res://Scenes/Player/Player.tscn" id="1_vbawi"]
+[ext_resource type="PackedScene" uid="uid://bg5muqo8toyv6" path="res://Scenes/ObjectContainer/ObjectContainer.tscn" id="3_4dwx7"]
+[ext_resource type="PackedScene" uid="uid://c2fm46tnmx2pn" path="res://Scenes/Projectiles/Asteroid.tscn" id="4_8gphe"]
+[ext_resource type="PackedScene" uid="uid://cm74kxpged886" path="res://Scenes/WaveManager/WaveManager.tscn" id="6_8gphe"]
+[ext_resource type="PackedScene" uid="uid://pko3tkj0s77u" path="res://Scenes/GameUi/GameUi.tscn" id="6_ksici"]
+[ext_resource type="PackedScene" uid="uid://b21gmjx41yhnb" path="res://Scenes/Spawner/Spawner.tscn" id="7_8gphe"]
+
+[node name="Level" type="Node" unique_id=242180907]
+
+[node name="Background" parent="." unique_id=798892124 instance=ExtResource("1_3hkb6")]
+
+[node name="Player" parent="." unique_id=1274446895 instance=ExtResource("1_vbawi")]
+position = Vector2(709, 898)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=806626292]
+position = Vector2(281, 187)
+
+[node name="ObjectContainer" parent="." unique_id=1271022370 instance=ExtResource("3_4dwx7")]
+test_scene = ExtResource("4_8gphe")
+
+[node name="WaveManager" parent="." unique_id=1207102909 instance=ExtResource("6_8gphe")]
+
+[node name="Spawner" parent="." unique_id=1986026076 instance=ExtResource("7_8gphe")]
+scene = ExtResource("4_8gphe")
+
+[node name="GameUI" parent="." unique_id=1482472594 instance=ExtResource("6_ksici")]

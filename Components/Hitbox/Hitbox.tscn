@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cjrx0t8e5xt1t"]
+
+[ext_resource type="Script" uid="uid://dk4aopyrdfcix" path="res://Components/Hitbox/Hitbox.gd" id="1_sbiml"]
+
+[node name="Hitbox" type="Area2D" unique_id=1039016395]
+script = ExtResource("1_sbiml")
+invincible_time = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=143688331]
+
+[node name="InvincibilityTimer" type="Timer" parent="." unique_id=791431750]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]

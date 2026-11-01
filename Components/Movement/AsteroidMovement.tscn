@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bls72j5vdrlob"]
+
+[ext_resource type="Script" uid="uid://dn63mqqfgvbq8" path="res://Components/Movement/AsteroidMovement.gd" id="1_0vn0q"]
+
+[node name="AsteroidMovement" type="Node" unique_id=907006119]
+script = ExtResource("1_0vn0q")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://j623xnb6apu5"]
+
+[ext_resource type="Texture2D" uid="uid://cfxbmthimuxmj" path="res://Assets/Images/DirectionShip.png" id="1_7piql"]
+
+[node name="ParticlesTest" type="Node2D" unique_id=483031144]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1109114818]
+texture = ExtResource("1_7piql")
+spread = 0.0
+gravity = Vector2(0, 0)

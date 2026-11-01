@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://sg3tiqdh7wy7"]
+
+[ext_resource type="PackedScene" uid="uid://bo7mfvx3jabwa" path="res://Scenes/Explosion/Explosion.tscn" id="1_cn0t3"]
+[ext_resource type="Texture2D" uid="uid://d1ioqdx2yl7o4" path="res://Assets/Textures/scorch_02.png" id="2_yej4v"]
+[ext_resource type="AudioStream" uid="uid://lfaotbbwdxeh" path="res://Assets/Sounds/93834__cgeffex__huge-explosion.wav" id="3_yej4v"]
+[ext_resource type="AudioStream" uid="uid://dhavfqmyg4gtl" path="res://Assets/Sounds/AsteroidExplosion.wav" id="4_jbox0"]
+
+[sub_resource type="Curve" id="Curve_jbox0"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.15240642, 0.52083325), 0.0, 0.0, 0, 0, Vector2(0.32887703, 1), 0.0, 0.0, 0, 0, Vector2(0.64788735, 1), 0.0, 0.0, 0, 0, Vector2(0.9887325, 0.022099495), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_70wha"]
+offsets = PackedFloat32Array(0, 0.3240469, 0.79325515, 1)
+colors = PackedColorArray(1, 1, 1, 1, 2.4973502, 1.5011723, 0.6473055, 1, 2.4973502, 1.5011723, 0.6473055, 1, 0.94509804, 0.5686275, 0.20784314, 0.12941177)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kl4tg"]
+streams_count = 2
+stream_0/stream = ExtResource("3_yej4v")
+stream_1/stream = ExtResource("4_jbox0")
+
+[node name="EnemyShipExplosion" unique_id=1985506063 instance=ExtResource("1_cn0t3")]
+
+[node name="CPUParticles2D" parent="." index="0" unique_id=88842571]
+emitting = false
+amount = 48
+texture = ExtResource("2_yej4v")
+lifetime = 1.2
+one_shot = true
+explosiveness = 0.64
+randomness = 0.23
+emission_shape = 2
+emission_sphere_radius = 26.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+radial_accel_min = 20.0
+radial_accel_max = 30.0
+angle_max = 360.0
+scale_amount_min = 0.3
+scale_amount_max = 0.7
+scale_amount_curve = SubResource("Curve_jbox0")
+color_ramp = SubResource("Gradient_70wha")
+
+[node name="Sound" parent="." index="1" unique_id=2133199105]
+stream = SubResource("AudioStreamRandomizer_kl4tg")

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c4l87jfqs05wy"]
+
+[ext_resource type="PackedScene" uid="uid://ccikipmlel15t" path="res://Scenes/PlayerThrust/PlayerThrust.tscn" id="1_h54ih"]
+[ext_resource type="Texture2D" uid="uid://y6tk7g15n0kw" path="res://Assets/Images/player.png" id="1_s0eop"]
+[ext_resource type="Script" uid="uid://ejg0e5ph7nba" path="res://Scenes/Player/Player.gd" id="1_t26db"]
+[ext_resource type="PackedScene" uid="uid://bejnye3nlghvx" path="res://Components/Movement/PlayerMovement.tscn" id="2_ft8w5"]
+[ext_resource type="PackedScene" uid="uid://ctmdkgn668it2" path="res://Components/Shooter/ManualShooter.tscn" id="4_ude3g"]
+[ext_resource type="PackedScene" uid="uid://bcun4tkhmegl8" path="res://Scenes/Projectiles/PlayerLaser.tscn" id="5_jmcll"]
+[ext_resource type="PackedScene" uid="uid://cjrx0t8e5xt1t" path="res://Components/Hitbox/Hitbox.tscn" id="6_4wape"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_825xp"]
+radius = 50.0
+
+[node name="Player" type="Node2D" unique_id=1274446895 groups=["player"]]
+script = ExtResource("1_t26db")
+
+[node name="PlayerThrust" parent="." unique_id=710595127 instance=ExtResource("1_h54ih")]
+position = Vector2(44, 14)
+
+[node name="PlayerThrust2" parent="." unique_id=1091220801 instance=ExtResource("1_h54ih")]
+position = Vector2(-44, 14)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=968440788]
+texture = ExtResource("1_s0eop")
+
+[node name="PlayerMovement" parent="." unique_id=1766883746 instance=ExtResource("2_ft8w5")]
+
+[node name="ManualShooter" parent="." unique_id=311734850 instance=ExtResource("4_ude3g")]
+position = Vector2(0, -80)
+projectile_scene = ExtResource("5_jmcll")
+
+[node name="Hitbox" parent="." unique_id=1039016395 instance=ExtResource("6_4wape")]
+z_index = 10
+collision_mask = 6
+damage_dealt = 0
+collision_shape = SubResource("CircleShape2D_825xp")
+
+[connection signal="hit" from="Hitbox" to="." method="_on_hitbox_hit"]

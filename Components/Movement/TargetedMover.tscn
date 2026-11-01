@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b8j46g6cfnug7"]
+
+[ext_resource type="Script" uid="uid://begem27bnfmtr" path="res://Components/Movement/TargetedMover.gd" id="1_r3tgn"]
+
+[node name="TargetedMover" type="Node" unique_id=1679214453]
+script = ExtResource("1_r3tgn")

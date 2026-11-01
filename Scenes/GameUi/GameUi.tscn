@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://pko3tkj0s77u"]
+
+[ext_resource type="PackedScene" uid="uid://cdr1br2i4phoe" path="res://Components/HealthBar/HealthBar.tscn" id="1_mb7aw"]
+[ext_resource type="Script" uid="uid://ctqevr1w2tme6" path="res://Scenes/GameUi/GameUi.gd" id="1_tt7lr"]
+[ext_resource type="FontFile" uid="uid://cn44u8ysia4jj" path="res://Assets/Fonts/Audiowide-Regular.ttf" id="2_anb74"]
+[ext_resource type="AudioStream" uid="uid://8lukbk3modqu" path="res://Assets/Sounds/830558__universfield__dark-80s-sci-fi-atmosphere.mp3" id="3_anolp"]
+[ext_resource type="AudioStream" uid="uid://ch6owf4tamodf" path="res://Assets/Sounds/Powerup2.mp3" id="5_5hvfd"]
+[ext_resource type="AudioStream" uid="uid://c3hdt24c41jlp" path="res://Assets/Sounds/487124__sjleilani__game-over.mp3" id="6_cfi2h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_anb74"]
+font = ExtResource("2_anb74")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_5hvfd"]
+font = ExtResource("2_anb74")
+font_size = 96
+
+[node name="GameUI" type="Control" unique_id=1482472594]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tt7lr")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1827579598]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="HealthBar" parent="MarginContainer" unique_id=335727832 instance=ExtResource("1_mb7aw")]
+custom_minimum_size = Vector2(320, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer" unique_id=1589272021]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "00000"
+label_settings = SubResource("LabelSettings_anb74")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=396846294]
+stream = ExtResource("3_anolp")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+
+[node name="BoostSound" type="AudioStreamPlayer" parent="." unique_id=608564670]
+stream = ExtResource("5_5hvfd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=178037601]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.6039216, 1, 0.24705882)
+
+[node name="ScoreLabel2" type="Label" parent="ColorRect" unique_id=76181204]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -31.0
+offset_right = 111.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_5hvfd")
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="." unique_id=1144925408]
+stream = ExtResource("6_cfi2h")
+
+[connection signal="died" from="MarginContainer/HealthBar" to="." method="_on_health_bar_died"]

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cryidxoapeeh3"]
+
+[ext_resource type="Script" uid="uid://dyl32ygd1u3vq" path="res://Scenes/Projectiles/BaseProjectile.gd" id="1_nwrhl"]
+[ext_resource type="PackedScene" uid="uid://cjrx0t8e5xt1t" path="res://Components/Hitbox/Hitbox.tscn" id="2_wrjq0"]
+
+[node name="BaseProjectile" type="Node2D" unique_id=1412531115]
+script = ExtResource("1_nwrhl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1695089026]
+
+[node name="ScreenNotifier" type="VisibleOnScreenNotifier2D" parent="." unique_id=2056833878]
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=829582663]
+wait_time = 15.0
+one_shot = true
+
+[node name="Hitbox" parent="." unique_id=1039016395 instance=ExtResource("2_wrjq0")]
+z_index = 1
+
+[connection signal="screen_exited" from="ScreenNotifier" to="." method="_on_screen_notifier_screen_exited"]
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
+[connection signal="died" from="Hitbox" to="." method="_on_hitbox_died"]

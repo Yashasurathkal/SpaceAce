@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cvpdrs4rjj5ij"]
+
+[ext_resource type="PackedScene" uid="uid://u1tmn37xi22k" path="res://Scenes/Enemies/EnemyBase.tscn" id="1_onvti"]
+[ext_resource type="PackedScene" uid="uid://sg3tiqdh7wy7" path="res://Scenes/Explosion/EnemyShipExplosion.tscn" id="2_b7qnk"]
+[ext_resource type="Texture2D" uid="uid://u6jmjoem641h" path="res://Assets/Images/Enemy3.png" id="2_khos1"]
+[ext_resource type="PackedScene" uid="uid://g1rb4xc3uvdf" path="res://Scenes/Projectiles/EnemyBomb.tscn" id="3_tggik"]
+[ext_resource type="AudioStream" uid="uid://bwrh48v2l3152" path="res://Assets/Sounds/685916_whoosh.wav" id="4_b7qnk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4wape"]
+radius = 55.0
+
+[node name="EnemyRobot" unique_id=51482252 instance=ExtResource("1_onvti")]
+speed = 150.0
+explosion_scene = ExtResource("2_b7qnk")
+powerup_chance = 20.0
+missile_chance = 20.0
+points = 50
+
+[node name="Sprite2D" parent="." index="0" unique_id=622199884]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_khos1")
+
+[node name="Shooter" parent="." index="1" unique_id=1443642112]
+position = Vector2(-1, 60)
+projectile_scene = ExtResource("3_tggik")
+launch_effect = ExtResource("4_b7qnk")
+
+[node name="Hitbox" parent="." index="2" unique_id=1039016395]
+collision_shape = SubResource("CircleShape2D_4wape")
+
+[node name="HealthBar" parent="." index="3" unique_id=335727832]
+offset_left = -50.0
+offset_top = -60.0
+offset_right = 50.0
+offset_bottom = -54.0

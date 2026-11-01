@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://ba5p5aga6dleo"]
+
+[ext_resource type="Script" uid="uid://bph47y7ovpecx" path="res://Scenes/AsteroidExplosion/AsteroidExplosion.gd" id="1_5d7uc"]
+[ext_resource type="PackedScene" uid="uid://bka4ktm0jd6kx" path="res://Scenes/AsteroidExplosion/AsteriodPiece.tscn" id="3_1o30q"]
+[ext_resource type="AudioStream" uid="uid://dhavfqmyg4gtl" path="res://Assets/Sounds/AsteroidExplosion.wav" id="4_cheos"]
+
+[node name="AsteriodExplosion" type="Node2D" unique_id=1170787451]
+script = ExtResource("1_5d7uc")
+
+[node name="Pieces" type="Node2D" parent="." unique_id=124646520]
+
+[node name="AsteriodPiece2" parent="Pieces" unique_id=184715346 instance=ExtResource("3_1o30q")]
+position = Vector2(0, 23)
+
+[node name="AsteriodPiece3" parent="Pieces" unique_id=2132228083 instance=ExtResource("3_1o30q")]
+position = Vector2(26, 23)
+
+[node name="AsteriodPiece4" parent="Pieces" unique_id=1053139187 instance=ExtResource("3_1o30q")]
+position = Vector2(26, 0)
+
+[node name="AsteriodPiece5" parent="Pieces" unique_id=616953532 instance=ExtResource("3_1o30q")]
+position = Vector2(26, -23)
+
+[node name="AsteriodPiece6" parent="Pieces" unique_id=176541024 instance=ExtResource("3_1o30q")]
+position = Vector2(0, -23)
+
+[node name="AsteriodPiece7" parent="Pieces" unique_id=85340897 instance=ExtResource("3_1o30q")]
+position = Vector2(-26, 0)
+
+[node name="AsteriodPiece8" parent="Pieces" unique_id=936126998 instance=ExtResource("3_1o30q")]
+position = Vector2(-26, 23)
+
+[node name="AsteriodPiece9" parent="Pieces" unique_id=1552412590 instance=ExtResource("3_1o30q")]
+position = Vector2(-40, -30)
+
+[node name="AsteriodPiece10" parent="Pieces" unique_id=1538962074 instance=ExtResource("3_1o30q")]
+position = Vector2(-40, -30)
+
+[node name="AsteriodPiece11" parent="Pieces" unique_id=1238098841 instance=ExtResource("3_1o30q")]
+position = Vector2(-40, 0)
+
+[node name="AsteriodPiece12" parent="Pieces" unique_id=169688865 instance=ExtResource("3_1o30q")]
+position = Vector2(-26, 23)
+
+[node name="AsteriodPiece13" parent="Pieces" unique_id=271386994 instance=ExtResource("3_1o30q")]
+position = Vector2(0, 46)
+
+[node name="AsteriodPiece14" parent="Pieces" unique_id=257864095 instance=ExtResource("3_1o30q")]
+position = Vector2(52, 69)
+
+[node name="AsteriodPiece15" parent="Pieces" unique_id=1541341509 instance=ExtResource("3_1o30q")]
+position = Vector2(52, 46)
+
+[node name="AsteriodPiece16" parent="Pieces" unique_id=381977858 instance=ExtResource("3_1o30q")]
+position = Vector2(52, 23)
+
+[node name="AsteriodPiece17" parent="Pieces" unique_id=1677581046 instance=ExtResource("3_1o30q")]
+position = Vector2(78, -23)
+
+[node name="AsteriodPiece18" parent="Pieces" unique_id=752442264 instance=ExtResource("3_1o30q")]
+position = Vector2(52, -53)
+
+[node name="AsteriodPiece19" parent="Pieces" unique_id=1392387787 instance=ExtResource("3_1o30q")]
+position = Vector2(26, -76)
+
+[node name="AsteriodPiece20" parent="Pieces" unique_id=1153621217 instance=ExtResource("3_1o30q")]
+position = Vector2(0, -76)
+
+[node name="AsteriodPiece21" parent="Pieces" unique_id=2093884128 instance=ExtResource("3_1o30q")]
+position = Vector2(-14, -46)
+
+[node name="AsteriodPiece22" parent="Pieces" unique_id=2012077221 instance=ExtResource("3_1o30q")]
+position = Vector2(12, -46)
+
+[node name="AsteriodPiece23" parent="Pieces" unique_id=1334798318 instance=ExtResource("3_1o30q")]
+position = Vector2(52, 0)
+
+[node name="AsteriodPiece24" parent="Pieces" unique_id=820347835 instance=ExtResource("3_1o30q")]
+position = Vector2(-26, 69)
+
+[node name="AsteriodPiece25" parent="Pieces" unique_id=674832464 instance=ExtResource("3_1o30q")]
+position = Vector2(-40, 46)
+
+[node name="AsteriodPiece26" parent="Pieces" unique_id=467982217 instance=ExtResource("3_1o30q")]
+position = Vector2(-66, 0)
+
+[node name="AsteriodPiece27" parent="Pieces" unique_id=2060876656 instance=ExtResource("3_1o30q")]
+position = Vector2(-66, -30)
+
+[node name="AsteriodPiece28" parent="Pieces" unique_id=1635414255 instance=ExtResource("3_1o30q")]
+position = Vector2(-52, -46)
+
+[node name="AsteriodPiece29" parent="Pieces" unique_id=294611373 instance=ExtResource("3_1o30q")]
+position = Vector2(-40, -69)
+
+[node name="AsteriodPiece30" parent="Pieces" unique_id=1076826826 instance=ExtResource("3_1o30q")]
+position = Vector2(78, 23)
+
+[node name="AsteriodPiece31" parent="Pieces" unique_id=1134179692 instance=ExtResource("3_1o30q")]
+position = Vector2(26, 69)
+
+[node name="AsteriodPiece32" parent="Pieces" unique_id=760467621 instance=ExtResource("3_1o30q")]
+position = Vector2(-66, 46)
+
+[node name="Sound" type="AudioStreamPlayer" parent="." unique_id=1319682535]
+stream = ExtResource("4_cheos")
+
+[node name="Timer" type="Timer" parent="." unique_id=1110843197]
+wait_time = 30.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://g1rb4xc3uvdf"]
+
+[ext_resource type="PackedScene" uid="uid://cryidxoapeeh3" path="res://Scenes/Projectiles/BaseProjectile.tscn" id="1_xtcrp"]
+[ext_resource type="PackedScene" uid="uid://bxvph3dbdqt2j" path="res://Scenes/Explosion/EnemyLaserExplosion.tscn" id="2_iuuqs"]
+[ext_resource type="Texture2D" uid="uid://ccm4gp4ggbf2k" path="res://Assets/Images/Bomb.png" id="2_lkghp"]
+[ext_resource type="PackedScene" uid="uid://b8j46g6cfnug7" path="res://Components/Movement/TargetedMover.tscn" id="3_0nn8b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ktxf"]
+radius = 27.0
+
+[node name="EnemyBomb" unique_id=1412531115 instance=ExtResource("1_xtcrp")]
+explosion_scene = ExtResource("2_iuuqs")
+points = 15
+
+[node name="Sprite2D" parent="." index="0" unique_id=1695089026]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_lkghp")
+
+[node name="ScreenNotifier" parent="." index="1" unique_id=2056833878]
+rect = Rect2(-34, -58, 69, 120)
+
+[node name="TargetedMover" parent="." index="3" unique_id=1679214453 instance=ExtResource("3_0nn8b")]
+speed = 200.0
+
+[node name="Hitbox" parent="." index="4" unique_id=1039016395]
+position = Vector2(0, 18.7)
+collision_layer = 20
+collision_mask = 9
+collision_shape = SubResource("CircleShape2D_6ktxf")
